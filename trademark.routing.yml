@@ -1,0 +1,7 @@
+trademark:
+  path: /admin/config/content/trademark
+  defaults:
+    _controller: Drupal\trademark\Controller\TrademarkController::content
+    _title: 'Trademark settings'
+  requirements:
+    _permission: 'access content'
