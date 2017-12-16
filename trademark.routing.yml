@@ -1,7 +1,30 @@
+#Replaces hook_menu()
+#
+#/**
+# * Implements hook_menu().
+# */
+#function trademark_menu() {
+#    $menu = array(
+#        'admin/config/content/trademark' => array(
+#            'title' => 'Trademark',
+#            'description' => 'Automatically wrap &trade;, &reg; and &copy; symbols with superscript HTML tags (<code>&lt;sup&gt;</code>).',
+#            'page callback' => 'drupal_get_form',
+#            'page arguments' => array('trademark_admin_settings'),
+#            'access callback' => 'user_access',
+#            'access arguments' => array('administer trademark settings'),
+#            'type' => MENU_NORMAL_ITEM,
+#        ),
+#    );
+#    return $menu;
+#}
+
+
 trademark:
   path: /admin/config/content/trademark
   defaults:
-    _controller: Drupal\trademark\Controller\TrademarkController::content
-    _title: 'Trademark settings'
+    _form: '\Drupal\example\Form\TrademarkForm'
+    _title: 'Trademark'
   requirements:
-    _permission: 'access content'
+    _permission: 'administer trademark settings'
+
+

@@ -12,67 +12,67 @@
 /**
  * Implements hook_menu().
  */
-function trademark_menu() {
-    $menu = array(
-        'admin/config/content/trademark' => array(
-            'title' => 'Trademark',
-            'description' => 'Automatically wrap &trade;, &reg; and &copy; symbols with superscript HTML tags (<code>&lt;sup&gt;</code>).',
-            'page callback' => 'drupal_get_form',
-            'page arguments' => array('trademark_admin_settings'),
-            'access callback' => 'user_access',
-            'access arguments' => array('administer trademark settings'),
-            'type' => MENU_NORMAL_ITEM,
-        ),
-    );
-    return $menu;
-}
-
-/**
- * Implements hook_permission().
- */
-function trademark_permission() {
-    $permission = array(
-        'administer trademark settings' => array(
-            'title' => t('Administer Trademark Settings'),
-            'description' => t('Perform administration configuration tasks for the Trademark module.'),
-        ),
-    );
-    return $permission;
-}
+//function trademark_menu() {
+//    $menu = array(
+//        'admin/config/content/trademark' => array(
+//            'title' => 'Trademark',
+//            'description' => 'Automatically wrap &trade;, &reg; and &copy; symbols with superscript HTML tags (<code>&lt;sup&gt;</code>).',
+//            'page callback' => 'drupal_get_form',
+//            'page arguments' => array('trademark_admin_settings'),
+//            'access callback' => 'user_access',
+//            'access arguments' => array('administer trademark settings'),
+//            'type' => MENU_NORMAL_ITEM,
+//        ),
+//    );
+//    return $menu;
+//}
+//
+///**
+// * Implements hook_permission().
+// */
+//function trademark_permission() {
+//    $permission = array(
+//        'administer trademark settings' => array(
+//            'title' => t('Administer Trademark Settings'),
+//            'description' => t('Perform administration configuration tasks for the Trademark module.'),
+//        ),
+//    );
+//    return $permission;
+//}
 
 /**
  * Configuration form.
  */
-function trademark_admin_settings() {
-    $form = array();
-
-    $form['trademark_copyright'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Wrap copyright &copy; symbols'),
-        '#default_value' => variable_get('trademark_copyright', TRUE),
-        '#description' => t("By enabling this option, copyright &copy; symbols will be wrapped in a HTML superscript tag (<code>&lt;sup&gt;</code>)."),
-    );
-    $form['trademark_registered'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Wrap registered &reg; symbols'),
-        '#default_value' => variable_get('trademark_registered', TRUE),
-        '#description' => t("By enabling this option, registered &reg; symbols will be wrapped in a HTML superscript tag (<code>&lt;sup&gt;</code>)."),
-    );
-    $form['trademark_trademark'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Wrap trademark &trade; symbols'),
-        '#default_value' => variable_get('trademark_trademark', FALSE),
-        '#description' => t("By enabling this option, trademark &trade; symbols will be wrapped in a HTML superscript tag (<code>&lt;sup&gt;</code>). By default this option is disabled as the trademark symbol is usually rendered as superscript natively."),
-    );
-
-    $form['trademark_node_title'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Filter Node Titles'),
-        '#default_value' => variable_get('trademark_node_title', TRUE),
-        '#description' => t("By default, node titles do not run through content input filters. By enabling this option, this will ensure that all node titles are checked for trademark symbols."),
-    );
-    return system_settings_form($form);
-}
+//function trademark_admin_settings() {
+//    $form = array();
+//
+//    $form['trademark_copyright'] = array(
+//        '#type' => 'checkbox',
+//        '#title' => t('Wrap copyright &copy; symbols'),
+//        '#default_value' => variable_get('trademark_copyright', TRUE),
+//        '#description' => t("By enabling this option, copyright &copy; symbols will be wrapped in a HTML superscript tag (<code>&lt;sup&gt;</code>)."),
+//    );
+//    $form['trademark_registered'] = array(
+//        '#type' => 'checkbox',
+//        '#title' => t('Wrap registered &reg; symbols'),
+//        '#default_value' => variable_get('trademark_registered', TRUE),
+//        '#description' => t("By enabling this option, registered &reg; symbols will be wrapped in a HTML superscript tag (<code>&lt;sup&gt;</code>)."),
+//    );
+//    $form['trademark_trademark'] = array(
+//        '#type' => 'checkbox',
+//        '#title' => t('Wrap trademark &trade; symbols'),
+//        '#default_value' => variable_get('trademark_trademark', FALSE),
+//        '#description' => t("By enabling this option, trademark &trade; symbols will be wrapped in a HTML superscript tag (<code>&lt;sup&gt;</code>). By default this option is disabled as the trademark symbol is usually rendered as superscript natively."),
+//    );
+//
+//    $form['trademark_node_title'] = array(
+//        '#type' => 'checkbox',
+//        '#title' => t('Filter Node Titles'),
+//        '#default_value' => variable_get('trademark_node_title', TRUE),
+//        '#description' => t("By default, node titles do not run through content input filters. By enabling this option, this will ensure that all node titles are checked for trademark symbols."),
+//    );
+//    return system_settings_form($form);
+//}
 
 /**
  * Implements hook_preprocess_page().
