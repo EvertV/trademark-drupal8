@@ -13,7 +13,7 @@ use Drupal\trademark\Controller\TrademarkController;
  *   id = "filter_trademark",
  *   module = "trademark",
  *   title = @Translation("Trademark Filter"),
- *   description = @Translation("'Wrap the trademark symbols in HTML superscript tags"),
+ *   description = @Translation("Wrap the trademark symbols in HTML superscript tags"),
  *   type = Drupal\filter\Plugin\FilterInterface::TYPE_TRANSFORM_IRREVERSIBLE,
  *   weight = -10
  * )
@@ -41,7 +41,7 @@ class FilterTrademark extends FilterBase {
         if (\Drupal::state()->get('trademark.trademark', false)) {
             $patterns[] = '/([!])?(&trade;|&#153;|™)/';
         }
-        if ($long && !empty($replacements)) {
+        if (!empty($replacements)) {
             return t('the following symbols will be wrapped in html superscript tags (<code>&lt;sup&gt;</code>): !replacements', array('!replacements' => implode(',', $replacements)));
         }
     }
