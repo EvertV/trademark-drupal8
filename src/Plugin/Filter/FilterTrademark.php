@@ -14,7 +14,7 @@ use Drupal\trademark\Controller\TrademarkController;
  *   module = "trademark",
  *   title = @Translation("Trademark Filter"),
  *   description = @Translation("'Wrap the trademark symbols in HTML superscript tags"),
- *   type = FILTER_TYPE_TRANSFORM_IRREVERSIBLE,
+ *   type = Drupal\filter\Plugin\FilterInterface::TYPE_TRANSFORM_IRREVERSIBLE,
  *   weight = -10
  * )
  */
