@@ -33,17 +33,17 @@ class FilterTrademark extends FilterBase {
     public function tips($long = FALSE) {
         $replacements = array();
         if (\Drupal::state()->get('trademark.copyright', true)) {
-            $patterns[] = '/([!])?(&copy;|&#169;|©)/';
+            $replacements[] = '&copy;';
         }
         if (\Drupal::state()->get('trademark.registered', true)) {
-            $patterns[] = '/([!])?(&reg;|&#174;|®)/';
+            $replacements[] = '&reg;';
         }
-        if (\Drupal::state()->get('trademark.trademark', false)) {
-            $patterns[] = '/([!])?(&trade;|&#153;|™)/';
+        if (\Drupal::state()->get('trademark.trademark', true)) {
+            $replacements[] = '&trade;';
         }
-        if (!empty($replacements)) {
-            return t('the following symbols will be wrapped in html superscript tags (<code>&lt;sup&gt;</code>): !replacements', array('!replacements' => implode(',', $replacements)));
-        }
+
+        return t('The following symbols will be wrapped in html superscript tags (<code>&lt;sup&gt;</code>): ' . join(', ', $replacements));
+
     }
 }
 //
