@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Installation functions for Lorem ipsum module.
+ * Installation functions for Trademark module.
  */
 
 use Drupal\user\RoleInterface;

@@ -18,11 +18,18 @@
 #    return $menu;
 #}
 
+trademark.test:
+  path: /trademark/test
+  defaults:
+    _controller: '\Drupal\trademark\Controller\TrademarkController::test'
+    _title: 'Trademark test'
+  requirements:
+    _permission: 'access content'
 
-trademark:
+trademark.form:
   path: /admin/config/content/trademark
   defaults:
-    _form: '\Drupal\example\Form\TrademarkForm'
+    _form: '\Drupal\trademark\Form\TrademarkForm'
     _title: 'Trademark'
   requirements:
     _permission: 'administer trademark settings'

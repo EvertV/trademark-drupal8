@@ -52,29 +52,29 @@ class TrademarkForm extends ConfigFormBase {
         // Default settings.
             $config = $this->config('trademark.settings');
 
-        $form['trademark_copyright'] = array(
+        $form['copyright'] = array(
             '#type' => 'checkbox',
             '#title' => $this->t('Wrap copyright &copy; symbols'),
-            '#default_value' => $config.get('trademark.copyright'),
+            '#default_value' => $config->get('trademark.copyright'),
             '#description' => $this->t("By enabling this option, copyright &copy; symbols will be wrapped in a HTML superscript tag (<code>&lt;sup&gt;</code>)."),
         );
-        $form['trademark_registered'] = array(
+        $form['registered'] = array(
             '#type' => 'checkbox',
             '#title' => $this->t('Wrap registered &reg; symbols'),
-            '#default_value' => $config.get('trademark.registered'),
-            '#description' => t("By enabling this option, registered &reg; symbols will be wrapped in a HTML superscript tag (<code>&lt;sup&gt;</code>)."),
+            '#default_value' => $config->get('trademark.registered'),
+            '#description' => $this->t("By enabling this option, registered &reg; symbols will be wrapped in a HTML superscript tag (<code>&lt;sup&gt;</code>)."),
         );
-        $form['trademark_trademark'] = array(
+        $form['trademark'] = array(
             '#type' => 'checkbox',
             '#title' => $this->t('Wrap trademark &trade; symbols'),
-            '#default_value' => $config.get('trademark.trademark'),
+            '#default_value' => $config->get('trademark.trademark'),
             '#description' => $this->t("By enabling this option, trademark &trade; symbols will be wrapped in a HTML superscript tag (<code>&lt;sup&gt;</code>). By default this option is disabled as the trademark symbol is usually rendered as superscript natively."),
         );
 
-        $form['trademark_node_title'] = array(
+        $form['node_tiles'] = array(
             '#type' => 'checkbox',
             '#title' => $this->t('Filter Node Titles'),
-            '#default_value' => $config.get('trademark.node_tiles'),
+            '#default_value' => $config->get('trademark.node_tiles'),
             '#description' => $this->t("By default, node titles do not run through content input filters. By enabling this option, this will ensure that all node titles are checked for trademark symbols."),
         );
 

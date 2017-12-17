@@ -3,4 +3,5 @@ description: 'Provides an input filter that can automatically wrap &trade;, &reg
 type: module
 package: Custom
 core: 8.x
+configure: trademark.form
 

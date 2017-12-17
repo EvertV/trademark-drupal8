@@ -1,4 +1,4 @@
-loremipsum.form:
+trademark.form:
   title: 'Trademark settings'
   description: 'Configure settings for the Trademark module.'
   route_name: trademark.form
